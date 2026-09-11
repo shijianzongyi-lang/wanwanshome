@@ -1,0 +1,421 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kiwi+Maru&family=Kosugi+Maru&family=Mochiy+Pop+One&display=swap');
+
+header {
+  width: 100%;
+  height: 60px;
+}
+
+.header_background {
+  margin: 0;
+  background-color: #d3cf005a;
+}
+
+.header_navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_container {
+  padding: 10px;
+}
+
+.logo_item {
+  align-items: center;
+  text-decoration: none;
+}
+
+.headStar {
+  height: 40px;
+  width: auto;
+}
+
+.headText {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.header_line {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.header_line .line-item--top{
+  width: 40px;
+  top: 8px;
+}
+
+.header_line .line-item--middle {
+  width: 40px;
+  top: 19px;
+}
+
+.header_line .line-item--bottom {
+  width: 40px;
+  top: 30px;
+}
+
+.header_line .line-item {
+  position: absolute;
+  background: #000000;
+  height: 2px;
+  right: 0;
+}
+
+header {
+  position: sticky;  /* または sticky / fixed など既存の指定に合わせる */
+  top: 0;
+  z-index: 200;        /* open_menu の z-index: 100 より大きい値にする */
+}
+
+.open_menu {
+  background-color: #fdfc97;
+  position: fixed;      /* 画面全体に重ねる */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;   /* display:none の代わりにこちらを使う */
+  transition: opacity 0.5s, visibility 0.5s;
+  z-index: 100;
+}
+
+.open_menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.active {
+  overflow: hidden;
+}
+
+.menu1 {
+  margin: 180px auto;
+  margin-bottom: 70px;
+  text-align: center;
+}
+.menu11 {
+  text-decoration: none;
+  font-size: 25px;
+}
+.menu2 {
+  margin: 20px auto;
+  margin-bottom: 70px;
+  text-align: center;
+}
+  
+
+body {
+  font-family: "Kiwi Maru", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+.kiwi {
+  font-family: "Kiwi Maru", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.Title {
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.sample_text24 {
+  margin: 30px 20px 0 20px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+select {
+  height: 33px;
+  font-family: "Kiwi Maru", serif;
+  font-size: 20px;
+  margin-left: 20px;
+  font-weight: bold;
+  border-radius: 18px;
+  background-color: #dbdbdb;
+}
+option {
+  font-family: "Kiwi Maru", serif;
+  font-weight: bold;
+}
+/*#review {
+  display: flex;
+}*/
+
+/*#review {
+  display: inline-block;
+}*/
+
+.stars {
+  display: inline-block;
+}
+
+.rated img{
+  display: inline-block;
+  width: 20px; /*星の大きさ*/
+  height: auto;
+  margin-right: 2px;
+}
+
+[id^="person_"] {
+  /*float: left;*/
+  width: 90%;/*150px*/
+  margin: 10px; /*外側余白*/
+  padding: 5px;
+  border: 1px rgba(0, 0, 0, 0.272);
+  border-top-style: solid;
+  /*border-bottom-style: solid;*/
+}
+
+#nada {
+  display: flex;
+}
+#user_name {
+  font-size: 20px;
+  font-weight: bold;
+}
+#datetime {
+  font-size: 11px;
+  font-weight: bold;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  color: #525252;
+}
+
+#comment {
+  margin-left: 10px;
+  overflow-wrap: break-word;
+}
+
+
+#check {
+  margin-top: 10px;
+  width: 25px;
+  height: 25px;
+  background-image: url("nogood.png");
+  background-size: cover;
+  display: inline-block;
+  /*display: flex;
+  justify-content: center;*/
+  cursor: pointer;
+}
+#check input[type="checkbox"] {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  float: left;
+  cursor: pointer;
+}
+#check input[type="checkbox"]:checked + .bg {
+  background-image: url("good.png");
+}
+.bg {
+  width: 100%;
+  height: 100%;
+  background-image: url("nogood.png");
+  background-size: cover;
+}
+.goodNum {
+  /*押す前のいいねボタン*/
+  display: inline-block;
+  height: 25px;
+  vertical-align: top;
+  margin-top: 10px;
+  color: gray;
+}
+.goodNum2 {
+  /*押した後のいいねボタン*/
+  display: inline-block;
+  height: 25px;
+  vertical-align: top;
+  margin-top: 10px;
+  color: #DE0084;
+}
+/*返信ボタン*/
+#reply {
+  margin-top: 10px;
+  width: 28px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size:60%;
+  background-position: 4px 3px;;
+  display: inline-block;
+  cursor: pointer;
+}
+.replyimg {
+  background-image: url("reply.png");
+}
+.addreplyimg {
+  background-image: url("addreply.png");
+}
+#reply input[type="button"] {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  float: left;
+  cursor: pointer;
+}
+.replyNum {
+  display: inline-block;
+  height: 25px;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-right: 20px;
+  color: gray;
+}
+#replies {
+  margin-left: 20px;
+  padding-left: 10px;
+  border: 5px rgba(0, 0, 0, 0.272);
+  border-left-style: groove;
+}
+
+#post {
+  text-align: center;
+  background-color: #82d30047;/*背景色*/
+  width: 300px;
+  margin: 50px auto;
+  padding: 40px 0 0 0;
+  border: 5px #578d00;
+  border-style: solid;
+  border-radius: 30px;
+}
+.postTitle {
+  margin-bottom: 20px;
+  font-size:25px;
+  font-weight: bold;
+  color: rgb(46, 132, 45);
+}
+#name {
+  width: 230px;
+  height: 40px;
+  padding: 0.3em;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+  background: #82d30018;/*#dfdfdf*/
+  margin-bottom: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+#name:not(:placeholder-shown):invalid {
+  background: #d300002c;
+  border-color: red;
+}
+#comm:not(:placeholder-shown):invalid {
+  background: #d300002c;
+  border-color: red;
+}
+/*textarea*/
+#comm {
+  resize: none;
+  width: 230px;
+  height: 130px;
+  background: #82d30018;
+  font-size: 15px;
+  border-radius: 5px;
+}
+/*星の数*/
+#postStars {
+  display: inline-block;
+  gap: 4px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+#postStars input[type="radio"] { display: none; }
+#postStars label {
+  cursor: pointer;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: transform 0.1s;
+}
+/*#postStars label:hover { transform: scale(1.15); }*/
+#postStars label img {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  pointer-events: none;
+}
+#loadmore {
+  margin: 30px;
+  text-align: center;
+}
+#likeload {
+  margin: 30px;
+  text-align: center;
+}
+#starload {
+  margin: 30px;
+  text-align: center;
+}
+.more {
+  width: 200px;
+  height: 40px;
+  font-family: "Kiwi Maru", serif;
+  font-size: 20px;
+  margin-top: 10px;
+  border: 0px solid #999;
+  border-radius: 5px;
+  color: #ffffff;
+  background: #006ab5;/*rgb(74, 170, 239)*/
+}
+.hidden {
+  display: none;
+}
+/*投稿ボタン*/
+#postButton {
+      width: 60px;
+      height: 40px;
+      font-family: "Kiwi Maru", serif;
+      font-size: 20px;
+      margin-top: 10px;
+      border: 0px solid #999;
+      border-radius: 5px;
+      color: #ffffff;
+      background: #39b500;/*rgb(74, 170, 239)*/
+    }
+/*いいね＋削除*/
+#buttons {
+  display: flex;
+}
+/*削除*/
+#deletePost {
+  margin-left: auto;
+  margin-top: 10px;  
+}
+[id^="delete_"] {
+  width: 21px;        /* 画像に合わせてサイズを指定 */
+  height: 21px;
+  background-image: url('delete.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.warn {
+  font-size: 10px;
+  text-align: center;
+  margin-top: 30px;
+  color: red;
+}

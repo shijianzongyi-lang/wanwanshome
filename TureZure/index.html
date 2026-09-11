@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>口コミ</title>
+  <link rel="icon" href="rated.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<nav class="open_menu">
+  <div class="menu1"><a class="menu11" href="index2.html">ー 何のサイト？？ ー</a></div>
+  <div class="menu2"><a class="menu11" href="index3.html">ー 投稿する ー</a></div>
+  <div class="menu2"><a class="menu11" href="index4.html">ー 設定 ー</a></div>
+</nav>
+<header>
+  <div class="header_background">
+      <div class="header_container">
+        <div class="header_navbar">
+          <div class="logo">
+            <a class="logo_item" href="index.html">
+              <img src="rated.png" class="headStar">
+              <text class="headText">Review</text>
+            </a>
+          </div>
+          <a class="header_line">
+            <span class="line-item line-item--top"></span>
+            <span class="line-item line-item--middle"></span>
+            <span class="line-item line-item--bottom"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+</header>
+<body>
+    <h1 class="Title">Twitttter</h1>
+    <p class="maruFont" style="text-align: center">ようこそ！</p>
+    <select id="selectmode">
+      <option>最近のポスト</option>
+      <option>自分のポスト</option>
+      <option>いいねしたポスト</option>
+      <option>いいねが多い順</option>
+      <option>星が多い順</option>
+    </select>
+<!--
+  <div id="person_9"><div id="user_name">yusuke</div><div id="stars" class="stars rated"><img src="rated.png"><img src="rated.png"><img src="rated.png"><img src="unrated.png"><img src="unrated.png"></div><div id="comment">もう少し期待</div>
+  <div style="display: flex">  
+    <div id="check">
+      <input type="checkbox" id="checkInput_9">
+      <div class="bg"></div>
+    </div>
+    <div id="likesNum_9" class="goodNum">0</div>
+    <div style="margin-left:auto"><button>消去</button></div>
+  </div>
+  </div>
+-->
+
+    <div id="review">
+      <i>読み込み中...</i>
+    </div>
+    <div id="loadmore"><button id="lmbtn" class="more">もっと過去のポスト</button></div>
+    <div id="likeload"><button id="llbtn" class="more">更に読み込む</button></div>
+    <div id="starload"><button id="slbtn" class="more">更に読み込む</button></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
