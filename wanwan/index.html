@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ワンワン度診断</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Mochiy+Pop+One&display=swap');
+    h1 {
+      text-align: center;
+    }
+    input[type=radio] {
+      display: none;
+    }
+    input[name="quest1"]:checked + label {
+      background-color: #00a917;
+      color: #ffffff;
+    }
+    input[name="quest2"]:checked + label {
+      background-color: #00a917;
+      color: #ffffff;
+    }
+    input[name="quest3"]:checked + label {
+      /*color: #ffffff;*/
+      background-image: none, url(pawpads.jpg);
+      background-size: auto, 100%
+    }
+    input[name="quest4"]:checked + label {
+      /*color: #ffffff;*/
+      background-image: none, url(pawpads.jpg);
+      background-size: auto, 100%
+    }
+    .popFont {
+      font-family: "Mochiy Pop One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .maruFont {
+      font-family: "Kosugi Maru", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .textWeight {
+      font-weight: bold;
+      margin-bottom: 30px
+    }
+    .sample_text24 {
+      position: relative;
+      /*font-weight: bold; */
+      margin: 0 auto 10px;
+    }
+    .sample_text24::before {
+      content: attr(data-number);
+      display: inline-block;
+      margin-right: 20px;
+      color: #77bcff;
+      font-size: 30px;
+      border-bottom: 3px solid #77bcff;
+    }
+    .circles {
+      flex: 0 0 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px
+    }
+    .label {
+      display: block; /* ブロックレベル要素化する */
+      float: left; /* 要素の左寄せ・回り込を指定する */
+      margin: 3px; /* ボックス外側の余白を指定する */
+      width: 100%; /* ボックスの横幅を指定する*/
+      height: 45px; /* ボックスの高さを指定する */
+      padding-left: 2px; /* ボックス内左側の余白を指定する */
+      padding-right: 2px; /* ボックス内御右側の余白を指定する */
+      color: #000000; /* フォントの色を指定 */
+      font-size: 18px;
+      text-align: center; /* テキストのセンタリングを指定する */
+      line-height: 45px; /* 行の高さを指定する */
+      border: 2px solid #00a917;/* ボックスの境界線を実線で指定する */
+      border-radius: 23px; /* 角丸を指定する */
+    }
+    .label2 {
+      display: block; /* ブロックレベル要素化する */
+      float: left; /* 要素の左寄せ・回り込を指定する */
+      margin: 3px; /* ボックス外側の余白を指定する */
+      width: 51px; /* ボックスの横幅を指定する*/
+      height: 55px; /* ボックスの高さを指定する */
+      padding: 0 2px 0 2px; /* ボックス内(上・右・下・左)の余白を指定する */
+      color: #000000; /* フォントの色を指定 */
+      font-size: 18px;
+      text-align: center; /* テキストのセンタリングを指定する */
+      line-height: 45px; /* 行の高さを指定する */
+      border: 2px solid #00a917;/* ボックスの境界線を実線で指定する */
+      border-radius: 30px; /* 角丸を指定する */
+    }
+    .center {
+      width: 97%;
+      height: 50px;
+      display: inline-block;
+    }
+    .center2 {
+      width: 60px;
+      height: 60px;
+      display: inline-block;
+    }
+    .queMargin{
+      margin-bottom: 40px
+    }
+    .textLeft {
+      float: left;
+      color: #db4f2f;
+    }
+    .textRight {
+      text-align: right;
+      color: #3880c9;
+    }
+    .button1 {
+      width: 60px;
+      height: 40px;
+      font-size: 18px;
+      border: 0px solid #999;
+      border-radius: 5px;
+      color: #ffffff;
+      background:rgb(74, 170, 239)
+    }
+    .button2 {
+      width: 170px;
+      height: 40px;
+      font-size: 18px;
+      border: 0px solid #999;
+      border-radius: 8px;
+      color: #ffffff;
+      background:rgb(23, 172, 60)
+    }
+    .nondisplay {
+      display: none;
+    }
+    .resultDisplay {
+      text-align: center;
+      margin: 40px 0 40px 0;
+    }
+    .output {
+      padding: 20px 0px 10px 0px;
+      font-size: 60px;
+      color: #77bcff;
+    }
+    .underLine {
+      background-image: linear-gradient(to bottom, transparent 90%, #77bcff 90%);
+    }
+    .share_button {
+	    display: inline-block;
+      margin: 16px 20px;
+      height: 25px;
+    	padding: 8px 15px;
+	    border-radius: 8px;
+	    color: #fff;
+	    background-color: #333;
+	    text-decoration: none;
+	    transition: 0.4s;
+      background-color: #000000;
+      width: 110px; /*ボタン横幅指定*/
+    }
+    .flex {
+      display: flex; /*横並び*/
+      align-items: center;
+    }
+    .flex .image {
+      height: 20px; /*画像サイズ指定*/
+      width: 20px; /*画像サイズ指定*/
+      margin: 0 10px 0 0; /*画像外側余白指定*/
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="popFont queMargin">🐶ワンワン度診断🐶</h1>
+  <p class="maruFont" style="text-align: center">４つの質問に答えてあなたのワンワン度を確かめよう！</p>
+  <div class="sample_text24 popFont" data-number="01">
+    あなたの年齢は？
+  </div>
+  <div class="maruFont queMargin">
+    <div class="center">
+      <input type="radio" name="quest1" value="a" id="q11"/>
+      <label for="q11" class="label maruFont">５歳</label>
+    </div>
+    <div class="center">
+      <input type="radio" name="quest1" value="b" id="q12"/>
+      <label for="q12" class="label">１０代</label>
+    </div>
+    <div class="center">
+      <input type="radio" name="quest1" value="c" id="q13"/>
+      <label for="q13" class="label">２０代</label>
+    </div>
+    <div class="center">
+      <input type="radio" name="quest1" value="d" id="q14"/>
+      <label for="q14" class="label">その他</label>
+    </div>
+  </div>
+
+  <div class="sample_text24 popFont" data-number="02">
+    好きな食べ物は？
+  </div>
+  <div class="maruFont queMargin">
+    <div class="center">
+      <input type="radio" name="quest2" value="e" id="q21"/>
+      <label for="q21" class="label">にんじん🥕</label>
+    </div>
+    <div class="center">
+      <input type="radio" name="quest2" value="f" id="q22"/>
+      <label for="q22" class="label">納豆🥢</label>
+    </div>
+    <div class="center">
+      <input type="radio" name="quest2" value="g" id="q23"/>
+      <label for="q23" class="label">ピザ🍕</label>
+    </div>
+    <div class="center">
+      <input type="radio" name="quest2" value="h" id="q24"/>
+      <label for="q24" class="label">鯖🐟</label>
+    </div>
+  </div>
+
+  <div class="sample_text24 popFont" data-number="03">
+    いつも元気か？
+  </div>
+  <div class="circles">
+    <div class="center2">
+      <input type="radio" name="quest3" value="i" id="q31"/>
+      <label for="q31" class="label2"></label>
+    </div>
+    <div class="center2">
+      <input type="radio" name="quest3" value="j" id="q32"/>
+      <label for="q32" class="label2"></label>
+    </div>
+    <div class="center2">
+      <input type="radio" name="quest3" value="k" id="q33"/>
+      <label for="q33" class="label2"></label>
+    </div>
+    <div class="center2">
+      <input type="radio" name="quest3" value="l" id="q34"/>
+      <label for="q34" class="label2"></label>
+    </div>
+    <div class="center2">
+      <input type="radio" name="quest3" value="m" id="q35"/>
+      <label for="q35" class="label2"></label>
+    </div>
+  </div>
+  <div class="maruFont textWeight">
+    <div class="textLeft">あてはまる</div><div class="textRight">あてはまらない</div>
+  </div>
+
+  <div class="sample_text24 popFont" data-number="04">
+    暑さ・寒さに弱く疲れやすい
+  </div>
+  <div class="circles">
+    <div class="center2">
+      <input type="radio" name="quest4" value="n" id="q41"/>
+      <label for="q41" class="label2"></label>
+    </div>
+    <div class="center2">
+      <input type="radio" name="quest4" value="o" id="q42"/>
+      <label for="q42" class="label2"></label>
+    </div>
+    <div class="center2">
+      <input type="radio" name="quest4" value="p" id="q43"/>
+      <label for="q43" class="label2"></label>
+    </div>
+    <div class="center2">
+      <input type="radio" name="quest4" value="q" id="q44"/>
+      <label for="q44" class="label2"></label>
+    </div>
+    <div class="center2">
+      <input type="radio" name="quest4" value="r" id="q45"/>
+      <label for="q45" class="label2"></label>
+    </div>
+  </div>
+  <div class="maruFont textWeight">
+    <div class="textLeft">あてはまる</div><div class="textRight">あてはまらない</div>
+  </div>
+
+  <p style="text-align: center;" id="btn">
+    <button class="button1 maruFont">診断</button>
+  </p>
+
+  <!--診断結果-->
+  <div class="nondisplay" id="result">
+    <p class="resultDisplay maruFont">あなたのワンワン度は...<b id="output" class="counter output underLine">0</b><b class="output underLine">％</b></p>
+    <div class="buttons">
+      <a
+	      id="js-share-twitter"
+	      class="share_button share_twitter maruFont flex textLeft"
+	      href=""
+    	  target="_blank"
+	      rel="nofollow noopener noreferrer"
+	    ><img src="logo-white.png" alt="" class="image">ポストする</a>
+      <p style="text-align: center;" id="btn2" class="textLeft">
+        <button class="button2 maruFont">もう一度診断する</button>
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
