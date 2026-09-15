@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>いなばあキャラ診断</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body class="maruFont">
+  <h1 class="popFont queMargin">🐶いなばあキャラ診断🐶</h1>
+  <p class="maruFont" style="text-align: center" id="intro">10個の質問であなたが「いないいないばあっ！」のどのキャラに似ているかがわかります！</p>
+
+  <div id="quest1">
+    <div class="sample_text24 popFont" data-number="01" id="statement1"></div>
+  </div>
+  
+  <div id="quest2">
+    <div class="sample_text24 popFont" data-number="02" id="statement2"></div>
+  </div>
+    
+  <div id="quest3">
+    <div class="sample_text24 popFont" data-number="03" id="statement3"></div>
+  </div>
+    
+  <div id="quest4">
+    <div class="sample_text24 popFont" data-number="04" id="statement4"></div>
+  </div>
+
+  <div id="quest5">
+    <div class="sample_text24 popFont" data-number="05" id="statement5"></div>
+  </div>
+
+  <div id="quest6">
+    <div class="sample_text24 popFont" data-number="06" id="statement6"></div>
+  </div>
+
+  <div id="quest7">
+    <div class="sample_text24 popFont" data-number="07" id="statement7"></div>
+  </div>
+
+  <div id="quest8">
+    <div class="sample_text24 popFont" data-number="08" id="statement8"></div>
+  </div>
+
+  <div id="quest9">
+    <div class="sample_text24 popFont" data-number="09" id="statement9"></div>
+  </div>
+
+  <div id="quest10">
+    <div class="sample_text24 popFont" data-number="10" id="statement10"></div>
+  </div>
+
+  <p style="text-align: center;" id="judgebtn">
+    <button class="button1 maruFont">診断</button>
+  </p>
+
+  <!--診断結果-->
+  <div id="result" class="nondisplay">
+    
+    <div class="mainresult">
+      <div class="hero-body">
+        <div class="avatar" id="avatarimg">
+          <img src="none.png" width="100%" height="100%">
+        </div>
+        <div class="hero-text">
+          <p class="name" id="character_name">春風 はるか</p>
+          <p class="nickname" id="character_explain">２０年間出演の大御所</p>
+          <p class="hero-percent"><span id="character_rate">92</span><span class="spansmall">% 一致</span></p>
+        </div>
+      </div>
+      <p class="hero-note"  id="character_comment">あなたに似ているキャラクターはいないいないばあっ！の中にはいません。これは悪いことではありません。この地球には８０億人以上の人間がいてそれぞれキャラを持っています。あなたがいないいないばあっ！に登場するどのキャラクターにも似ていないなんて地球規模でみたら当たり前のことです。その個性を大切にこれからも生きてください。あと、適当に全部「あてはまらない」にしないでちゃんと答えてください。</p>
+    </div>
+
+    <p class="list-heading">他キャラクターとの類似度</p>
+    <div class="results" role="list" id="otherList"></div>
+
+    <div class="buttons">
+      <a
+	      id="js-share-twitter"
+	      class="share_button share_twitter maruFont flex textLeft"
+	      href=""
+    	  target="_blank"
+	      rel="nofollow noopener noreferrer"
+	    ><img src="logo-white.png" alt="" class="image">ポストする</a>
+      <p style="text-align: center;" id="btn2" class="textLeft">
+        <button class="button2 maruFont">もう一度診断する</button>
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
