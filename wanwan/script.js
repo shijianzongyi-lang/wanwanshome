@@ -110,7 +110,7 @@ btn.addEventListener('click', () => {
   const share_twitter = document.getElementById("js-share-twitter");
   share_twitter.setAttribute(
 	  "href",
-	  "https://twitter.com/share?url=" + "https://shijianzongyi-lang.github.io/wanwan/" + "&text=" + share_title + "&hashtags=ワンワン度診断"
+	  "https://twitter.com/share?url=" + "https://wanwan0923.jp/wanwan/" + "&text=" + share_title + "&hashtags=ワンワン度診断"
   );
 });
 
