@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>合格報告</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    .center {
+      text-align: center;
+    }
+    .px1 {
+      font-size:120%;
+      line-height:2px;
+      font-family: 'Arial';
+    }
+    .px2 {
+      font-size: 10px;
+      line-height:2px;
+    }
+    .txt{
+    display: inline-block;
+    width: 50%;
+    height: 40px;
+    padding: 0.3em;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    background: #f2f2f2;
+    margin: 1px 0px 1px 0px;
+    font-size: 20px;
+    border-radius: 5px;
+    }
+
+    details {
+      border: 1px solid #aaaaaa;
+      border-radius: 4px;
+      padding: 0.5em 0.5em 0;
+    }
+    summary {
+      font-weight: bold;
+      margin: -0.5em -0.5em 0;
+      padding: 0.5em;
+    }
+    details[open] {
+      padding: 0.5em;
+    }
+    details[open] summary {
+      border-bottom: 1px solid #aaaaaa;
+      margin-bottom: 0.5em;
+    }
+
+    #output {
+      border: solid 6px rgb(255, 153, 0);
+      padding: 30px 10px;
+    }
+    button {
+      width: 60px;
+      height: 40px;
+      font-size: 18px;
+      border: 0px solid #999;
+      border-radius: 5px;
+      color: #ffffff;
+      background:rgb(74, 170, 239)
+    }
+    form p {
+      margin-top: 0
+    }
+  </style>
+</head>
+<body>
+  <h1>合格報告先生</h1>
+  <div style="text-align: center;">
+    <img src="wish.jpg" alt="願う人" width="400" height="300">
+  </div>
+  <p class="center px1">
+    <label for="textInput">受かったか落ちたか報告してみてください</label>
+  </p>
+  <p class="center px2">入力から合否を判断できなかった場合、阿部寛のHPに飛ばします</p>
+  <p class="center">
+    <input id="textInput" type="text" class="txt">
+  </p>
+  <details>
+    <summary>入力例</summary>
+    ・受かりました　・合格しました　・受かったー　・受かりませんでした　・不合格でした　・落ちました　・受かんなかった。
+  </details>
+  <p class="center">
+    <button>報告</button>
+  </p>
+  </tr>
+
+  <p id="output" class="center">ここに表示します</p>
+
+<!--
+  <form>
+    <p>form要素</p>
+    <label>入力 <input name="formInput"></label>
+    <button type="submit">Submit</button>
+  </form>
+-->
+
+  <script src="script.js"></script>
+</body>
+</html>
