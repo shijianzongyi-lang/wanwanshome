@@ -4,25 +4,72 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ワンワンの家</title>
-  <style>
-   
-  </style>
+  <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-  <h1 class="popFont queMargin">ワンワンの家</h1>
-  <p class="maruFont" style="text-align: center">今までに作ったサイト全部</p>
-  <a href="https://wanwan0923.jp/pass/" target="_blank" rel="noopener">合格報告</a>
-  <br>
-  <a href="https://wanwan0923.jp/wanwan/" target="_blank" rel="noopener">ワンワン度診断</a>
-  <br>
-  <a href="https://shijianzongyi-lang.github.io/review/" target="_blank" rel="noopener">ツイッターもどき</a>
-  <br>
-  <a href="https://wanwan0923.jp/gacha/" target="_blank" rel="noopener">３文字ガチャ</a>
-  <br>
-  <a href="https://shijianzongyi-lang.github.io/goal/" target="_blank" rel="noopener">探検パズル</a>
-  <br>
-  <a href="https://wanwan0923.jp/inabaa/" target="_blank" rel="noopener">いなばあキャラ診断</a>
+  <canvas id="background"></canvas>
+  <h1 class="title">ワンワンの家</h1>
+  <p class="subtitle">今までに作ったサイト全部</p>
+  <div class="sites">
+    <div class="links">
+      <a href="https://wanwan0923.jp/pass/" target="_blank" rel="noopener">合格報告</a>
+      <span class="releaseDate">公開：<span class="detailDate">無</span></span>
+    </div>
+    <div class="statementBox">
+      <div class="statement">➤初めてのWebサイト作り。<br>➤AIではなく正規表現を使ってる</div>
+    </div>
+  </div>
 
+  <div class="sites">
+    <div class="links">
+      <a href="https://wanwan0923.jp/wanwan/" target="_blank" rel="noopener">ワンワン度診断</a>
+      <span class="releaseDate">公開：<span class="detailDate">2026/01/02</span></span>
+    </div>
+    <div class="statementBox">
+      <div class="statement">➤inputタグに慣れるためにボタン多め。CSSも頑張った。<br>➤X共有ボタンを作る簡単さを知った。</div>
+    </div>
+  </div>
+
+  <div class="sites">
+    <div class="links">
+      <a href="https://shijianzongyi-lang.github.io/review/" target="_blank" rel="noopener">ツイッターもどき</a>
+      <span class="releaseDate">公開：<span class="detailDate">2026/04/12</span></span>
+    </div>
+    <div class="statementBox">
+      <div class="statement">➤データベースに連携することを学んだ。データベースに繋がった時の喜びで米4杯はいける。<br>➤ローカルストレージの管理も学んだ。</div>
+    </div>
+  </div>
+
+  <div class="sites">
+    <div class="links">
+      <a href="https://wanwan0923.jp/gacha/" target="_blank" rel="noopener">３文字ガチャ</a>
+      <span class="releaseDate">公開：<span class="detailDate">2026/05/07</span></span>
+    </div>
+    <div class="statementBox">
+      <div class="statement">➤帰省の新幹線内での産物。強いて言うならsetIntervalを学んだ。<br>➤最初の文字が「ん」とか小さい文字とかにならないようになっているのがこだわりポイント</div>
+    </div>
+  </div>
+
+  <div class="sites">
+    <div class="links">
+      <a href="https://shijianzongyi-lang.github.io/goal/" target="_blank" rel="noopener">探検パズル</a>
+      <span class="releaseDate">公開：<span class="detailDate">2026/07/06</span></span>
+    </div>
+    <div class="statementBox">
+      <div class="statement">➤WebAssemblyを導入してJavaScriptからC++上の関数にアクセスできるようにした。C++には機械学習の処理を行わせた。<br>➤canvasタグも勉強してたので使ってみた。<br>➤ランキングの共有方法はツイッターもどきの転用</div>
+    </div>
+  </div>
+
+  <div class="sites">
+    <div class="links">
+      <a href="https://wanwan0923.jp/inabaa/" target="_blank" rel="noopener">いなばあキャラ診断</a>
+      <span class="releaseDate">公開：<span class="detailDate">(未公開)</span></span>
+    </div>
+    <div class="statementBox">
+      <div class="statement">➤プログラミングより設計の方が難しかった。<br>➤フォーマットはワンワン度診断の形式を使用。inputタグのrangeを初めて使った</div>
+    </div>
+  </div>
+  
   <script src="script.js"></script>
 </body>
 </html>
