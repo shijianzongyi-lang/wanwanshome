@@ -5,6 +5,7 @@ const storage = sessionStorage;
 const headcomment = document.getElementById('intro');
 const judgebtn = document.getElementById('judgebtn');
 const resultdiv = document.getElementById('result');
+const share_twitter = document.getElementById("js-share-twitter");//共有ボタン
 //let btm = document.documentElement;
 
 const questionList = [ "絵や工作など何かを作り上げるのが好き", "兄弟か姉妹がいる", "空想世界の妄想をするのが好きだ", "好奇心旺盛でいろいろなことに興味を持つ", "ダンスを踊るのが好きだ", "赤ちゃんみたいに甘えん坊だ", "チャーミングな髪形をしている", "宇宙に行った経験がある", "赤いものを身に付けている", "あなたの命の源は雲だ"];
@@ -128,11 +129,13 @@ judgebtn.addEventListener('click', () => {
     resultExplain.textContent = explainList[9];
     resultRate.textContent = 0;
     resultComment.textContent = commentList[9];
+    share_twitter.classList.add("disabledLink");
   } else if (tmpResult.length == 9 && result.rate == 99) {//全部１００％
     resultName.textContent = explainList[9];
     resultExplain.textContent = explainList[9];
     resultRate.textContent = 100;
     resultComment.textContent = commentList[10];
+    share_twitter.classList.add("disabledLink");
   } else {//その他の割合
     avatarimg.innerHTML = `<img src="${characterList[result.index].img}" width="100%" height="100%">`;
     resultName.textContent = result.name;
@@ -168,7 +171,7 @@ judgebtn.addEventListener('click', () => {
 
   //Xへの共有
   const share_title = `わたしに一番似ているキャラクターは...${result.name}${characterList[result.index].emoji}でした。【一致度${result.rate}％📊】`;
-  const share_twitter = document.getElementById("js-share-twitter");
+  
   share_twitter.setAttribute(
 	  "href",
 	  "https://twitter.com/share?url=" + "https://wanwan0923.jp/inabaa/" + "&text=" + share_title + "&hashtags=いなばあキャラ診断"
