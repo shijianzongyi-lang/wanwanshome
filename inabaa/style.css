@@ -129,6 +129,10 @@ input[type="range"]::-moz-range-thumb {
 .nondisplay {
   display: none;
 }
+.disabledLink {
+  pointer-events: none;
+  opacity: 0.3;
+}
 .mainresult {
   background: linear-gradient(#ebebeb, 20%, #a2d9fd, 90%, #ebebeb);
   padding: 30px 20px;
